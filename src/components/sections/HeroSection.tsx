@@ -1,12 +1,18 @@
 "use client";
 
-import React, { lazy, Suspense } from "react";
+import React from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { fadeUpVariant } from "@/lib/motion";
 import { CyberButton } from "../ui/Button";
 import { WaitlistInput } from "../ui/Input";
+import { SplineFallback } from "../3d/SplineFallback";
 
-const Spline = lazy(() => import("@splinetool/react-spline"));
+// Dynamically import Spline with SSR disabled to prevent hydration errors and improve initial load
+const SplineScene = dynamic(() => import("@splinetool/react-spline"), {
+  ssr: false,
+  loading: () => <SplineFallback />,
+});
 
 export function HeroSection() {
   return (
@@ -14,19 +20,13 @@ export function HeroSection() {
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full md:w-1/2 h-[80vh] bg-radial-gradient from-[var(--color-secondary-container)]/10 via-[var(--color-primary-container)]/5 to-transparent blur-3xl mix-blend-screen pointer-events-none"></div>
-        {/* Spline placeholder */}
-        <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[40vw] h-[60vh] hidden md:flex items-center justify-center border border-[var(--color-outline-variant)]/10 bg-[var(--color-surface-container-lowest)]/50 backdrop-blur-sm z-0">
-           <Suspense fallback={<div className="text-center">
-              <span className="material-symbols-outlined text-[var(--color-primary-container)] opacity-50 text-6xl mb-4 animate-pulse">view_in_ar</span>
-              <p className="font-[family-name:var(--font-space-grotesk)] text-[var(--color-outline)] text-xs tracking-widest uppercase">[ 3D_ENVIRONMENT_PENDING ]</p>
-           </div>}>
-             {/* Note: In a real project, put your spline URL here */}
-             {/* <Spline scene="https://prod.spline.design/your-scene/scene.splinecode" /> */}
-             <div className="text-center">
-              <span className="material-symbols-outlined text-[var(--color-primary-container)] opacity-50 text-6xl mb-4 animate-pulse">view_in_ar</span>
-              <p className="font-[family-name:var(--font-space-grotesk)] text-[var(--color-outline)] text-xs tracking-widest uppercase">[ 3D_ENVIRONMENT_PENDING ]</p>
-           </div>
-           </Suspense>
+        {/* Spline 3D Scene Wrapper */}
+        <div className="absolute right-10 top-1/2 -translate-y-1/2 w-[40vw] h-[60vh] hidden md:block z-0 pointer-events-none md:pointer-events-auto">
+           {/* Replace this scene URL with your actual Spline export URL */}
+           {/* Example: <SplineScene scene="https://prod.spline.design/your-scene/scene.splinecode" /> */}
+
+           {/* For the template placeholder, we just render the fallback */}
+           <SplineFallback />
         </div>
       </div>
 

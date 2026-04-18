@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { CyberButton } from "../ui/Button";
 
 export function Navbar() {
   return (
