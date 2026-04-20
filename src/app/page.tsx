@@ -8,7 +8,6 @@ import { PricingSection } from "@/components/sections/PricingSection";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { Footer } from "@/components/layout/Footer";
 import { FAQSection } from "@/components/sections/FAQSection";
-import { CTASection } from "@/components/sections/CTASection";
 
 
 
@@ -24,7 +23,6 @@ export default function Home() {
       <PricingSection />
       <CtaSection />
       <FAQSection />
-      <CTASection />
       <Footer />
     </main>
   );
