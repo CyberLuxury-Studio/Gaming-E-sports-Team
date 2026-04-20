@@ -34,3 +34,12 @@ To add your own Spline scene:
 
 ## Customizing Colors
 Open `src/app/globals.css`. We use native CSS variables coupled with Tailwind v4 `@theme` directives. Modify variables like `--color-primary-container` (Cyan) or `--color-secondary-container` (Pink) to change the entire feel of the template instantly.
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [CONTRIBUTING.md](./CONTRIBUTING.md) for details.
+
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.

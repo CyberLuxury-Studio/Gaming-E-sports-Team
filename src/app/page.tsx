@@ -2,9 +2,15 @@ import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { LiveScoresSection } from "@/components/sections/LiveScoresSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
+import { DemoSection } from "@/components/sections/DemoSection";
+import { SocialProofSection } from "@/components/sections/SocialProofSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { Footer } from "@/components/layout/Footer";
+import { FAQSection } from "@/components/sections/FAQSection";
+import { CTASection } from "@/components/sections/CTASection";
+
+
 
 export default function Home() {
   return (
@@ -13,8 +19,12 @@ export default function Home() {
       <HeroSection />
       <LiveScoresSection />
       <FeaturesSection />
+      <DemoSection />
+      <SocialProofSection />
       <PricingSection />
       <CtaSection />
+      <FAQSection />
+      <CTASection />
       <Footer />
     </main>
   );
