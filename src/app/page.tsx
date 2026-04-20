@@ -1,6 +1,8 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
+import { DemoSection } from "@/components/sections/DemoSection";
+import { SocialProofSection } from "@/components/sections/SocialProofSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { Footer } from "@/components/layout/Footer";
@@ -15,6 +17,8 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <FeaturesSection />
+      <DemoSection />
+      <SocialProofSection />
       <PricingSection />
       <CtaSection />
       <FAQSection />
